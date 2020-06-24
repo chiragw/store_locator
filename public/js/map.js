@@ -1,16 +1,18 @@
 mapboxgl.accessToken =
-  'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNqenY5MThjMDBqZ3YzY3A0N3ppZTA5Y2QifQ.LrFjedgw1wG34TkWCpNtFg';
+  'pk.eyJ1IjoiY2hpcmFnd2FkaHdhIiwiYSI6ImNrYmtmaXRvYzA1Ym8ycHA5Mm1zbHY4dzMifQ.qNoKgR8kBTuzWxGTQPpbqA';
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
-  zoom: 9,
-  center: [-71.157895, 42.707741]
+  zoom: 11,
+  center: [77.035480, 28.662770]
 });
 
 // Fetch stores from API
 async function getStores() {
   const res = await fetch('/api/v1/stores');
   const data = await res.json();
+
+  console.log(data);
 
   const stores = data.data.map(store => {
     return {
